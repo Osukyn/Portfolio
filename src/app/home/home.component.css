@@ -1,0 +1,15 @@
+.projects-container {
+  margin-top: 20px;
+}
+
+.title-container  {
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  color: white;
+  transform: translateX(-50%);
+}
+
+.project-cc {
+  position: relative;
+}

@@ -1,0 +1,9 @@
+.page {
+  padding-top: 64px;
+}
+
+@media (min-width: 576px) {
+  .page {
+    padding-top: 82px;
+  }
+}
