@@ -1,25 +1,25 @@
 <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-white portfolio-navbar gradient">
-  <div class="container"><a class="navbar-brand logo" href="#">Portfolio</a>
+  <div class="container"><a class="navbar-brand logo" routerLink="">Portfolio</a>
     <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarNav"><span class="visually-hidden">Toggle navigation</span><span
       class="navbar-toggler-icon"></span></button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="projects-grid-cards.html">Projects</a></li>
-        <li class="nav-item"><a class="nav-link" href="cv.html">CV</a></li>
-        <li class="nav-item"><a class="nav-link" href="hire-me.html">Hire me</a></li>
+        <li class="nav-item"><a class="nav-link active" routerLink="">Home</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="">CV</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="">Hire me</a></li>
       </ul>
     </div>
   </div>
 </nav>
 <main class="page lanidng-page">
-  <app-home></app-home>
+  <router-outlet></router-outlet>
 </main>
 
 <footer class="page-footer">
   <div class="container">
-    <div class="links"><a href="#">About me</a><a href="#">Contact me</a><a href="#">Projects</a></div>
-    <div class="social-icons"><a href="#"><i class="icon ion-social-facebook"></i></a><a href="#"><i
-      class="icon ion-social-instagram-outline"></i></a><a href="#"><i class="icon ion-social-twitter"></i></a></div>
+    <div class="links"><a routerLink="">About me</a><a routerLink="">Contact me</a><a routerLink="projects">Projects</a></div>
+    <div class="social-icons"><a routerLink=""><i class="icon ion-social-facebook"></i></a><a routerLink=""><i
+      class="icon ion-social-instagram-outline"></i></a><a routerLink=""><i class="icon ion-social-twitter"></i></a></div>
   </div>
 </footer>
