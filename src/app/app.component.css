@@ -1,0 +1,9 @@
+.page {
+  padding-top: calc(1.5rem + 2 * .5rem + 2 * .3125rem + .75rem) !important;
+}
+
+@media (min-width: 576px) {
+  .page {
+    padding-top: calc(1.5rem + 2 * 1.2rem + 2 * .3125rem + .75rem) !important;
+  }
+}

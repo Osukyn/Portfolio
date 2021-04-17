@@ -1,0 +1,61 @@
+.projects-container {
+  margin-top: 20px;
+}
+
+.title-container  {
+  position: absolute;
+  top: 8px;
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+
+.project-cc {
+  position: relative;
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  -webkit-user-drag: none;
+}
+
+.gradient {
+  background: rgb(69,140,252);
+  background: linear-gradient(45deg, rgba(69,140,252,1) 0%, rgba(130,29,217,1) 50%, rgba(233,88,88,1) 100%);
+  background-size: 400% 400%;
+  animation: Gradient 3s ease both;
+}
+
+.image, .p-link {
+  -webkit-user-select: none;  /* Chrome all / Safari all */
+  -moz-user-select: none;     /* Firefox all */
+  -ms-user-select: none;      /* IE 10+ */
+  user-select: none;          /* Likely future */
+  -webkit-user-drag: none;
+}
+
+#p-desc {
+  visibility: hidden;
+  opacity: 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  transition: opacity 500ms, visibility 1s;
+}
+
+.desc-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: calc(8px + calc(1.3rem + 0.6vw) + 10px);
+  bottom: 0;
+  width: 80%;
+  color: white;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+@keyframes Gradient {
+  0%{background-position:0 65%}
+  50%{background-position:100% 36%}
+  100%{background-position:0 65%}
+}
