@@ -13,7 +13,11 @@ export class ProjectService {
     this.projects.push(new Project('BlueAmp', 'BlueAmp était mon projet de terminal STI2D, c\'est un ampli audio contrôlé par Bluetooth via une application sur un smartphone.'));
     this.projects.push(new Project('RDC Stocks', 'Progressive Web App permettant aux utilisateurs de recevoir des notifications lors de la remise en stock de cartes graphiques.'));
   }
-  public getProjects(): Array<Project> {
-    return this.projects;
+  public getProjects(limit?: number): Array<Project> {
+    if (limit && limit <= this.projects.length && limit > 0) {
+      return this.projects.slice(0, limit);
+    } else {
+      return this.projects;
+    }
   }
 }
