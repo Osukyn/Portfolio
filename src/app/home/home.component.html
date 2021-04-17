@@ -15,7 +15,7 @@
       <h2>Projets</h2>
     </div>
     <div class="row g-0">
-      <ng-container *ngFor="let project of projectService.getProjects(5)">
+      <ng-container *ngFor="let project of projectService.getProjects(3)">
         <div class="col-md-6 col-lg-4 item zoom-on-hover project-cc"
              (mouseover)="desc.style.visibility = 'visible'; desc.style.opacity = '1'"
              (mouseout)="desc.style.visibility = 'hidden'; desc.style.opacity = '0'">
