@@ -21,10 +21,11 @@ const appRoutes: Routes = [
     HomeComponent,
     ProjectsComponent
   ],
-    imports: [
-        BrowserModule,
-        RouterModule.forRoot(appRoutes)
-    ],
+  imports: [
+    BrowserModule,
+    RouterModule.forRoot(appRoutes),
+    BrowserAnimationsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
