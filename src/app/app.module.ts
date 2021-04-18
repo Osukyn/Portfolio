@@ -6,7 +6,6 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import { ProjectsComponent } from './projects/projects.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: 'project/:id', component: ProjectCardComponent },
@@ -24,8 +23,7 @@ const appRoutes: Routes = [
   ],
     imports: [
         BrowserModule,
-        RouterModule.forRoot(appRoutes),
-        BrowserAnimationsModule
+        RouterModule.forRoot(appRoutes)
     ],
   providers: [],
   bootstrap: [AppComponent]
