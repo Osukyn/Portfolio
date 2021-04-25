@@ -24,6 +24,13 @@ export class SkillService {
     this.skillTypes.push(new SkillType('Développement logiciel', tempArray));
 
     tempArray = new Array<Skill>();
+    tempArray.push(new Skill('Mongo DB', SkillEnum.BDD));
+    tempArray.push(new Skill('MySQL', SkillEnum.BDD));
+    tempArray.push(new Skill('PostgreSQL', SkillEnum.BDD));
+    tempArray.push(new Skill('Oracle SQL', SkillEnum.BDD));
+    this.skillTypes.push(new SkillType('Base de données', tempArray));
+
+    tempArray = new Array<Skill>();
     tempArray.push(new Skill('DataGrip', SkillEnum.IDE));
     tempArray.push(new Skill('IntelliJ IDEA', SkillEnum.IDE));
     tempArray.push(new Skill('PhpStorm', SkillEnum.IDE));

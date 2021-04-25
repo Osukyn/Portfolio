@@ -25,6 +25,7 @@ export class SkillType {
 export enum SkillEnum {
   DEVWEB,
   DEVSOFT,
+  BDD,
   IDE,
   VCS,
   ADMINSYS,
