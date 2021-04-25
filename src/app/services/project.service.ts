@@ -31,7 +31,7 @@ export class ProjectService {
     this.projects.push(new Project('BlueAmp',
       'BlueAmp était mon projet de terminal STI2D, c\'est un ampli audio contrôlé par Bluetooth via une application sur un smartphone.',
       new Article([{content: ''}]),
-      this.findSkills(['java', 'c', 'androidstudio', 'arduinoide'])
+      this.findSkills(['java', 'c', 'androidstudio', 'arduinoide', 'solidworks'])
     ));
 
     // Project RDC Stocks
@@ -83,7 +83,7 @@ export class ProjectService {
     this.projects.push(new Project('NavalFront',
       'Librairie graphique Angular pour les projets Angular de NavalGroup.',
       new Article([{content: ''}]),
-      this.findSkills(['angular', 'typescript', 'javascript', 'html', 'css', 'visualstudiocode']),
+      this.findSkills(['angular', 'typescript', 'javascript', 'html', 'css', 'visualstudiocode', 'git', 'gitlab']),
       true
     ));
 
@@ -99,7 +99,7 @@ export class ProjectService {
     this.projects.push(new Project('Portfolio',
       'Le porfolio sur lequel vous naviguez actuellement, fait en Angular.',
       new Article([{content: ''}]),
-      this.findSkills(['angular', 'typescript', 'javascript', 'html', 'css', 'webstorm'])
+      this.findSkills(['angular', 'typescript', 'javascript', 'html', 'css', 'webstorm', 'git', 'github', 'gitkraken', 'debian', 'nginx', 'photoshop'])
     ));
   }
 
@@ -109,6 +109,10 @@ export class ProjectService {
       skills.push(this.skills.find(value => value.id === id));
     });
     return skills;
+  }
+
+  public findSkillInProjects(id: string): boolean {
+    return this.projects.find(project => project.skills.find(skill => skill.id === id) !== undefined) !== undefined;
   }
 
   public getProjects(limit?: number): Array<Project> {
