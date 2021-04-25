@@ -9,6 +9,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
+  { path: 'project/:id', component: ProjectCardComponent },
   { path: 'projects/:id', component: ProjectsComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: 'contact', component: ContactComponent },
