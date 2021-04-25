@@ -11,6 +11,7 @@ import { ContactComponent } from './contact/contact.component';
 const appRoutes: Routes = [
   { path: 'projects/:id', component: ProjectsComponent },
   { path: 'projects', component: ProjectsComponent },
+  { path: 'contact', component: ContactComponent },
   { path: '', component: HomeComponent },
   { path: '**', redirectTo: '' }
 ];
