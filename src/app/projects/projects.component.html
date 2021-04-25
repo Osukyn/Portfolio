@@ -4,7 +4,7 @@
       <h2>Mes Projets</h2>
     </div>
     <div class="row">
-      <ng-container *ngFor="let project of projectService.getProjects()">
+      <ng-container *ngFor="let project of projects">
         <div class="col-md-6 col-lg-4">
           <div class="card border-0"><a routerLink="{{project.route}}"><img class="card-img-top scale-on-hover" src="{{project.image}}" alt="Image du projet {{project.name}}"></a>
             <div class="card-body">

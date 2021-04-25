@@ -3,13 +3,12 @@
   <div class="container">
     <div class="avatar" style="background-image:url('assets/img/avatars/avatar.jpg');"></div>
     <div class="about-me">
-      <p>Développeur Full Stack passionné</p>
-      <a class="btn btn-outline-primary" role="button" routerLink=""
-         style="background: rgba(255,255,255,0);box-shadow: 0 5px 20px rgba(0,0,0,0.19);color: rgb(255,255,255);">Contactez-moi</a>
+      <p>Développeur Full Stack Junior passionné</p>
+      <a class="mat-raised-button" routerLink="contact">Contactez-moi</a>
     </div>
   </div>
 </section>
-<section class="portfolio-block photography projects-container">
+<section class="portfolio-block photography projects-container border-bottom">
   <div class="container">
     <div class="heading">
       <h2>Projets</h2>
@@ -17,8 +16,8 @@
     <div class="row g-0">
       <ng-container *ngFor="let project of projectService.getProjects(3)">
         <div class="col-md-6 col-lg-4 item zoom-on-hover project-cc"
-             (mouseover)="desc.style.visibility = 'visible'; desc.style.opacity = '1'"
-             (mouseout)="desc.style.visibility = 'hidden'; desc.style.opacity = '0'">
+             (mouseover)="desc.style.visibility = 'visible'; desc.style.opacity = '1';"
+             (mouseout)="desc.style.visibility = 'hidden'; desc.style.opacity = '0';">
           <a class="p-link" routerLink="{{project.route}}">
             <img class="img-fluid image" src="{{project.image}}" alt="Image du projet {{project.name}}">
             <div class="title-container"><h3>{{project.name}}</h3></div>
@@ -27,48 +26,77 @@
         </div>
       </ng-container>
     </div>
-    <div style="display: flex; justify-content: center; align-items: center; width: 100%; padding-top: 2em">
-      <a class="btn btn-outline-primary" role="button" routerLink="projects">Voir tout mes projets</a>
+    <div
+      style="display: flex; justify-content: center; align-items: center; width: 100%; padding-top: 2em; padding-bottom: 5em;">
+      <a class="mat-raised-button" role="button" routerLink="projects">Voir tous mes projets</a>
     </div>
-
   </div>
 </section>
-<section class="portfolio-block skills">
+<section class="portfolio-block cv">
   <div class="container">
-    <div class="heading">
-      <h2>Special Skills</h2>
+    <div class="work-experience group">
+      <div class="heading">
+        <h2 class="text-center">Experience</h2>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Concepteur Logiciels</h3>
+            <h4 class="organization">Naval Group</h4>
+          </div>
+          <div class="col-md-6"><span class="period">09/2019 - Aujourd'hui</span></div>
+        </div>
+        <p class="text-muted">Au sein de cette entreprise j'ai essentiellement travaillé avec le framework Angular</p>
+      </div>
+    </div>
+    <div class="education group">
+      <div class="heading">
+        <h2 class="text-center">Education</h2>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>Lycée</h3>
+            <h4 class="organization">Lycée Rouvière, Toulon</h4>
+          </div>
+          <div class="col-6"><span class="period">09/2018 - 06/2019</span></div>
+        </div>
+        <p class="text-muted">Lycée dans lequel j'ai préparé un BAC STI2D SIN que j'ai obtenu avec mention Bien.</p>
+      </div>
+      <div class="item">
+        <div class="row">
+          <div class="col-md-6">
+            <h3>BTS SIO SLAM</h3>
+            <h4 class="organization">Lycée Bonaparte, Toulon</h4>
+          </div>
+          <div class="col-md-6"><span class="period">09/2019 - Aujourd'hui</span></div>
+        </div>
+        <p class="text-muted">Lycée dans lequel je prépare mon diplôme de BTS SIO (Services informatiques aux organisations) SLAM (solutions logicielles et applications métiers)</p>
+      </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <div class="card special-skill-item border-0">
-          <div class="card-header bg-transparent border-0"><i class="icon ion-ios-star-outline"></i></div>
-          <div class="card-body">
-            <h3 class="card-title">Web Design</h3>
-            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac
-              facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-          </div>
-        </div>
+      <div class="heading" style="margin-bottom: 2em">
+        <h2 class="text-center" style="margin: 0">Compétences</h2>
       </div>
-      <div class="col-md-4">
-        <div class="card special-skill-item border-0">
-          <div class="card-header bg-transparent border-0"><i class="icon ion-ios-lightbulb-outline"></i></div>
-          <div class="card-body">
-            <h3 class="card-title">Interface Design</h3>
-            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac
-              facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+      <div class="skills portfolio-info-card">
+        <ng-container *ngFor="let skillSection of skillService.getSkillTypes()">
+          <h2>{{skillSection.name}}</h2>
+          <div class="skills-section">
+            <ng-container *ngFor="let skill of skillSection.skills">
+              <div class="skills-card" [ngStyle]="{cursor: projectService.findSkillInProjects(skill.id) ? 'pointer' : 'auto'}" routerLink="{{projectService.findSkillInProjects(skill.id) ? 'projects/' + skill.id : ''}}">
+                <img class="skills-svg image" src="{{skill.image}}" alt="{{skill.name}} logo">
+                <h3 class="skills-text">{{skill.name}}</h3>
+              </div>
+            </ng-container>
           </div>
-        </div>
+        </ng-container>
       </div>
-      <div class="col-md-4">
-        <div class="card special-skill-item border-0">
-          <div class="card-header bg-transparent border-0"><i class="icon ion-ios-gear-outline"></i></div>
-          <div class="card-body">
-            <h3 class="card-title">Photography and Print</h3>
-            <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac
-              facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
-          </div>
-        </div>
+    </div>
+    <div class="hobbies group">
+      <div class="heading">
+        <h2 class="text-center">Loisirs</h2>
       </div>
+      <p class="text-center text-muted">En dehors de la programmation, je suis également passionné de sciences et technologies, ainsi je lis régulièrement des artcicles ou des livres sur ces sujets, tel que Une brève histoire du temps de Stephen Hawking. Pendant mon temps personnel, il m'arrive de faire de l'electronique. J'aime également voyager même si la situation actuelle ne le permet pas malheureusement.</p>
     </div>
   </div>
 </section>
