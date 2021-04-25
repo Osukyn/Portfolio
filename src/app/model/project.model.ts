@@ -10,7 +10,7 @@ export class Project {
   article: Article;
   navalgroup = false;
   get route(): string {
-    return `/project&id=${this.id}`;
+    return `/project/${this.id}`;
   }
   get image(): string {
     return `assets/img/projects/${this.navalgroup ? 'navalgroup' : this.id}.jpg`;
