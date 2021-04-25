@@ -58,7 +58,7 @@ export class ProjectService {
 
     // Project Nolark
     this.projects.push(new Project('Nolark',
-      'Site vitrine commercialisation de casques de motos.',
+      'Site vitrine de commercialisation de casques de motos.',
       new Article([{content: ''}]),
       this.findSkills(['html', 'css', 'javascript', 'netbeans', 'git'])
     ));
@@ -121,5 +121,8 @@ export class ProjectService {
     } else {
       return this.projects;
     }
+  }
+  public getProject(id: string): Project {
+    return this.projects.find(project => project.id === id);
   }
 }
