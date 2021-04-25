@@ -83,7 +83,7 @@
           <h2>{{skillSection.name}}</h2>
           <div class="skills-section">
             <ng-container *ngFor="let skill of skillSection.skills">
-              <div class="skills-card">
+              <div class="skills-card" [ngStyle]="{cursor: projectService.findSkillInProjects(skill.id) ? 'pointer' : 'auto'}" routerLink="{{projectService.findSkillInProjects(skill.id) ? 'projects/' + skill.id : ''}}">
                 <img class="skills-svg image" src="{{skill.image}}" alt="{{skill.name}} logo">
                 <h3 class="skills-text">{{skill.name}}</h3>
               </div>

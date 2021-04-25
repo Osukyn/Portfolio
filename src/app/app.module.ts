@@ -8,7 +8,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { ProjectsComponent } from './projects/projects.component';
 
 const appRoutes: Routes = [
-  { path: 'project/:id', component: ProjectCardComponent },
+  { path: 'projects/:id', component: ProjectsComponent },
   { path: 'projects', component: ProjectsComponent },
   { path: '', component: HomeComponent },
   { path: '**', redirectTo: '' }
