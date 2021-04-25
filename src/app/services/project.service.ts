@@ -58,7 +58,7 @@ export class ProjectService {
 
     // Project Nolark
     this.projects.push(new Project('Nolark',
-      'Site vitrine commercialisation de casques de motos.',
+      'Site vitrine de commercialisation de casques de motos.',
       new Article([{content: ''}]),
       this.findSkills(['html', 'css', 'javascript', 'netbeans', 'git'])
     ));
@@ -94,6 +94,12 @@ export class ProjectService {
       this.findSkills(['angular', 'typescript', 'javascript', 'html', 'css', 'java', 'mongodb', 'visualstudiocode', 'eclipse']),
       true
     ));
+    // Project Virtualisation
+    this.projects.push(new Project('Virtualisation',
+      'Mise en place de l\'environnement Proxmox avec création d\'un serveur DHCP, de VMs et de Containers permettant l\'hébergement de tous mes projets personnels ainsi que des projets d\'amis',
+      new Article([{content: ''}]),
+      this.findSkills(['proxmoxve', 'debian', 'ubuntu'])
+    ));
 
     // Project Portfolio
     this.projects.push(new Project('Portfolio',
@@ -121,5 +127,8 @@ export class ProjectService {
     } else {
       return this.projects;
     }
+  }
+  public getProject(id: string): Project {
+    return this.projects.find(project => project.id === id);
   }
 }

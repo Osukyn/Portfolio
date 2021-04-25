@@ -1,4 +1,39 @@
 <section class="portfolio-block block-intro gradient">
   <div class="container">
+    <div style="display: flex; justify-content: center">
+      <div class="image-container">
+        <img class="image" src="{{projet.image}}" alt="{{projet.name}}">
+      </div>
+    </div>
+    <h1 class="title">{{projet.name}}</h1>
+  </div>
+</section>
+<section class="portfolio-block">
+  <div class="container">
+    <div class="heading">
+      <h2>Description</h2>
+    </div>
+    <div style="display: flex; justify-content: center; width: 100%; padding-bottom: 5em;">
+      <div class="col-md-6">
+        <h4 class="text-center">{{projet.description}}</h4>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+    <div class="heading">
+      <h2>Technologies</h2>
+    </div>
+    <div class="skills portfolio-info-card">
+      <h2>Technologies</h2>
+      <div class="skills-section">
+        <ng-container *ngFor="let skill of projet.skills">
+          <div class="skills-card">
+            <img class="skills-svg image" src="{{skill.image}}" alt="{{skill.name}} logo">
+            <h3 class="skills-text">{{skill.name}}</h3>
+          </div>
+        </ng-container>
+      </div>
+    </div>
   </div>
 </section>
