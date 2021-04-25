@@ -16,8 +16,8 @@
     <div class="row g-0">
       <ng-container *ngFor="let project of projectService.getProjects(3)">
         <div class="col-md-6 col-lg-4 item zoom-on-hover project-cc"
-             (mouseover)="desc.style.visibility = 'visible'; desc.style.opacity = '1'"
-             (mouseout)="desc.style.visibility = 'hidden'; desc.style.opacity = '0'">
+             (mouseover)="desc.style.visibility = 'visible'; desc.style.opacity = '1';"
+             (mouseout)="desc.style.visibility = 'hidden'; desc.style.opacity = '0';">
           <a class="p-link" routerLink="{{project.route}}">
             <img class="img-fluid image" src="{{project.image}}" alt="Image du projet {{project.name}}">
             <div class="title-container"><h3>{{project.name}}</h3></div>
@@ -79,152 +79,17 @@
         <h2 class="text-center" style="margin: 0">Compétences</h2>
       </div>
       <div class="skills portfolio-info-card">
-        <h2>Développement Web</h2>
-        <div class="skills-section">
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/angular-logo.svg" alt="Angular logo">
-            <h3 class="skills-text">Angular</h3>
+        <ng-container *ngFor="let skillSection of skillService.getSkillTypes()">
+          <h2>{{skillSection.name}}</h2>
+          <div class="skills-section">
+            <ng-container *ngFor="let skill of skillSection.skills">
+              <div class="skills-card">
+                <img class="skills-svg image" src="{{skill.image}}" alt="{{skill.name}} logo">
+                <h3 class="skills-text">{{skill.name}}</h3>
+              </div>
+            </ng-container>
           </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/nodejs-logo.svg" alt="Node.js logo">
-            <h3 class="skills-text">Node.js</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/typescript-logo.svg" alt="TypeScript logo">
-            <h3 class="skills-text">TypeScript</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/javascript-logo.svg" alt="JavaScript logo">
-            <h3 class="skills-text">JavaScript</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/html-logo.svg" alt="HTML logo">
-            <h3 class="skills-text">HTML</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/css-logo.svg" alt="CSS logo">
-            <h3 class="skills-text">CSS</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/php-logo.svg" alt="PHP logo">
-            <h3 class="skills-text">PHP</h3>
-          </div>
-        </div>
-        <h2>Développement logiciel</h2>
-        <div class="skills-section">
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/java-logo.svg" alt="Java logo">
-            <h3 class="skills-text">Java</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/c-logo.svg" alt="C logo">
-            <h3 class="skills-text">C</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/python-logo.svg" alt="Python logo">
-            <h3 class="skills-text">Python</h3>
-          </div>
-        </div>
-        <h2>IDE</h2>
-        <div class="skills-section">
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/datagrip-logo.svg" alt="DataGrip logo">
-            <h3 class="skills-text">DataGrip</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/intellij-logo.svg" alt="IntelliJ IDEA logo">
-            <h3 class="skills-text">IntelliJ IDEA</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/phpstorm-logo.svg" alt="PhpStorm logo">
-            <h3 class="skills-text">PhpStorm</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/pycharm-logo.svg" alt="PyCharm logo">
-            <h3 class="skills-text">PyCharm</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/webstorm-logo.svg" alt="WebStorm logo">
-            <h3 class="skills-text">WebStorm</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/androidstudio-logo.svg" alt="Android Studio logo">
-            <h3 class="skills-text">Android Studio</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/visualstudiocode-logo.svg" alt="Visual Studio Code logo">
-            <h3 class="skills-text">Visual Studio Code</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/eclipse-logo.svg" alt="Eclipse logo">
-            <h3 class="skills-text">Eclipse</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/netbeans-logo.svg" alt="Netbeans logo">
-            <h3 class="skills-text">Netbeans</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/arduino-logo.svg" alt="Arduino IDE logo">
-            <h3 class="skills-text">Arduino IDE</h3>
-          </div>
-        </div>
-        <h2>Gestion de version</h2>
-        <div class="skills-section">
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/git-logo.svg" alt="Git logo">
-            <h3 class="skills-text">Git</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/github-logo.svg" alt="GitHub logo">
-            <h3 class="skills-text">GitHub</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/gitlab-logo.svg" alt="GitLab logo">
-            <h3 class="skills-text">GitLab</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/gitkraken-logo.svg" alt="GitKraken logo">
-            <h3 class="skills-text">GitKraken</h3>
-          </div>
-        </div>
-        <h2>Administration Système</h2>
-        <div class="skills-section">
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/proxmox-logo.svg" alt="Proxmox VE logo">
-            <h3 class="skills-text">Proxmox VE</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/debian-logo.svg" alt="Debian logo">
-            <h3 class="skills-text">Debian</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/ubuntu-logo.svg" alt="Ubuntu logo">
-            <h3 class="skills-text">Ubuntu</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/nginx-logo.svg" alt="Nginx logo">
-            <h3 class="skills-text">Nginx</h3>
-          </div>
-        </div>
-        <h2>Multimédia</h2>
-        <div class="skills-section">
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/office-logo.svg" alt="Office logo">
-            <h3 class="skills-text">Office</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/photoshop-logo.svg" alt="Photoshop logo">
-            <h3 class="skills-text">Photoshop</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/premierepro-logo.svg" alt="Premiere Pro logo">
-            <h3 class="skills-text">Premiere Pro</h3>
-          </div>
-          <div class="skills-card">
-            <img class="skills-svg image" src="assets/img/skills/solidworks-logo.svg" alt="SolidWorks logo">
-            <h3 class="skills-text">SolidWorks</h3>
-          </div>
-        </div>
+        </ng-container>
       </div>
     </div>
     <div class="hobbies group">
