@@ -6,6 +6,7 @@ import { ProjectCardComponent } from './project-card/project-card.component';
 import { HomeComponent } from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import { ProjectsComponent } from './projects/projects.component';
+import { ContactComponent } from './contact/contact.component';
 
 const appRoutes: Routes = [
   { path: 'projects/:id', component: ProjectsComponent },
@@ -19,7 +20,8 @@ const appRoutes: Routes = [
     AppComponent,
     ProjectCardComponent,
     HomeComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
